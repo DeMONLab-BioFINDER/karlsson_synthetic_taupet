@@ -1,7 +1,7 @@
 # karlsson_synthetic_taupet
 
 
-Code and final model to generate synthetic tau-PET scans from MRI, age and plasma p-tau217 will be available shortly.
+Code and final model to generate synthetic tau-PET scans from MRI, age and plasma p-tau217 will be available shortly. See two examples of true and generate tau-PET scans in the videos below.
 
 
 
