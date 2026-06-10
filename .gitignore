@@ -1,0 +1,24 @@
+# Data
+datasets/
+outputs/
+*.nii
+*.nii.gz
+*.dcm
+
+# weights and checkpoints
+outputs/ckpt/*/*.hdf5
+outputs/logs/*/
+
+# Python
+__pycache__/
+.ipynb_checkpoints
+env/
+venv/
+
+# macOS
+.DS_Store
+.AppleDouble
+.Trashes
+
+# slurm
+slurm-*.out
