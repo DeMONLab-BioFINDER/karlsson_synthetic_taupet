@@ -1,0 +1,18 @@
+# conda env create -f dl-env.yml
+name: dl-env
+channels:
+- conda-forge
+- defaults
+dependencies:
+- python=3.9.15
+- tensorflow=2.8.0
+- pandas=2.2.3
+- scikit-learn=1.5.2
+- numpy=1.26.4
+- nibabel=5.3.0
+- tqdm=4.66.5
+- jupyter=1.1.1
+- seaborn=0.13.2
+- matplotlib=3.9.1
+- scikit-image=0.24.0
+

@@ -1,0 +1,6 @@
+file_names,age,plasma_ptau217,study
+sim_case1,65,,cohort1
+sim_case2,70,0.5,cohort2
+sim_case3,75,,cohort1
+sim_case4,80,0.3,cohort1
+sim_case5,85,0.6,cohort2
