@@ -14,7 +14,7 @@ Tau protein aggregation in the brain is a hallmark of Alzheimer’s disease (AD)
 We assembled data from 13 different AD cohorts, totaling 5,191 participants, and systematically tested and evaluated different deep learning models. The final model was a 3D image-to-image U-Net model with residual and attention units that integrated tabular variables in the bottleneck, see figure. Synthetic scans generated on left-out test data showed promising resemblance to true tau-PET in quantitative, qualitative and prognostic evaluations, with more details in the research article.
 
 <p align="center">
-<img width="400" alt="Unet" src="https://github.com/user-attachments/assets/be70465d-3f39-41a7-8b18-0e521d051bab" />
+<img width="600" alt="Unet" src="https://github.com/user-attachments/assets/be70465d-3f39-41a7-8b18-0e521d051bab" />
 </p>
 
 ## Structure and usage
