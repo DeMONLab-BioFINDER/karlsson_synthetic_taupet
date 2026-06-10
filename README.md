@@ -39,13 +39,13 @@ Note that this repo contains both 1) code for replicating the work in the resear
 In the research article, the following preprocessing was performed before training:
 - ***T1w MRI:*** Skull stripping, FreeSurfer v.6.0 segmentation based on the Desikan-Killiany atlas.
 - ***Tau-PET:*** attenuation-correction, motion-correction, summed, and rigid co-registration to MRI, smoothing to FWHM = 7 mm using an isotropic Gaussian kernel.
-- ***All images:*** registered to 2x2x2mm MNI space.
+- ***All images:*** registered to 2x2x2mm MNI space and saved as NIfTI.
 
 Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is performed during training.
 
 ## Dependencies
 
-Python, tensorflow based code. Further dependencies are specified in the environment.yml file that can be used during set-up.
+Main: Python, Tensorflow. Further dependencies are specified in the environment.yml file that can be used during set-up.
 
 
 
