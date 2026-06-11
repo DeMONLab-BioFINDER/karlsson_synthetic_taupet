@@ -25,6 +25,12 @@ karlsson_synthetic_taupet/
 │   └── simulated_examples/      # simulated dataset for reference and correct formatting
 ├── examples/                    # examples of how to train and evaluate a new model
 ├── notebooks                    # notebooks to evaluate results and create plots similar to those in the article
+├── outputs/                     # dir for outputs during training and evaluation
+│   ├── ckpt/                    # saved checkpoints during training 
+│   ├── eval/                    # saved csv summary files during evaluation
+│   ├── figures/                 # saved figures
+│   ├── logs/                    # saved logs during training
+│   └── synthetic_test_scans/    # saved generated synthetic tau-PET scans during evaluation
 ├── pretrained_models            # dir for saved models
 │   └── unet_taupet_v1/          # fitted synthetic tau-PET model
 └── src                          # source code
