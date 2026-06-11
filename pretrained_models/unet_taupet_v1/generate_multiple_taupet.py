@@ -19,7 +19,7 @@ import src.utils.image_helpers as ih
 # --------------------------------------------------
 # CONFIG
 # --------------------------------------------------
-test_csv = "datasets/df_test.csv"
+test_csv = "datasets/df_test.csv" #INSERT test dataset dir
 mri_root = " " #INSERT MRI root
 
 # U-Net weights from trained model
