@@ -1,4 +1,4 @@
-Author: Linda Karlsson, 2026.
+Author: Linda Karlsson, 2026.                    [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## Generating synthetic tau-PET scans in Alzheimer’s disease from MRI, blood biomarkers and demographics with deep learning
 
