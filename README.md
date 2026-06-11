@@ -50,8 +50,19 @@ In the research article, the following preprocessing was performed before traini
 Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is integrated within the training and evaluation functions of this repo, so not needed to do beforehand.
 
 ## Dependencies
+All dependencies are specified in the environment.yml file that can be used during set-up.
 
-Main: Python, Tensorflow. Further dependencies are specified in the environment.yml file that can be used during set-up.
+- python=3.9.15
+- tensorflow=2.8.0
+- pandas=2.2.3
+- scikit-learn=1.5.2
+- numpy=1.26.4
+- nibabel=5.3.0
+- tqdm=4.66.5
+- jupyter=1.1.1
+- seaborn=0.13.2
+- matplotlib=3.9.1
+- scikit-image=0.24.0
 
 
 
