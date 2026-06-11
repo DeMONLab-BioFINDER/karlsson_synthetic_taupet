@@ -1,6 +1,5 @@
 # Data
 datasets/
-outputs/
 *.nii
 *.nii.gz
 *.dcm
