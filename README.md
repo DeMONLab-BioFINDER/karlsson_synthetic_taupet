@@ -71,6 +71,6 @@ All dependencies are specified in the environment.yml file that can be used duri
 
 ## Contact
 
-For any questions or inquiries, please contact @karlssonlinda: linda.karlsson@med.lu.se
+For any questions or inquiries, please contact linda.karlsson@med.lu.se
 
 
