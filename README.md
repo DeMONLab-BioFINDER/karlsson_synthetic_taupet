@@ -47,7 +47,7 @@ In the research article, the following preprocessing was performed before traini
 - ***Tau-PET:*** attenuation-correction, motion-correction, summed, and rigid co-registration to MRI, smoothing to FWHM = 7 mm using an isotropic Gaussian kernel.
 - ***All images:*** registered to 2x2x2mm MNI space and saved as NIfTI.
 
-Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is performed during training.
+Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is integrated within the training and evaluation functions of this repo, so not needed to do beforehand.
 
 ## Dependencies
 
