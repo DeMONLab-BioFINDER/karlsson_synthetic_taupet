@@ -2,7 +2,7 @@ Author: Linda Karlsson, 2026.
 
 ## Generating synthetic tau-PET scans in Alzheimer’s disease from MRI, blood biomarkers and demographics with deep learning
 
-This repo contains code for training, evaluating and visualizing a U-Net 3D model that generates synthetic tau-PET scans from MRI, age and plasma p-tau217. It also contains a pre-trained version of the model that can be directly applied to new test cases, corresponding to the version evaluated in the article: https://www.medrxiv.org/content/10.64898/2026.05.06.26352540v1.
+This repo contains code for training, evaluating and visualizing a U-Net 3D model that generates synthetic tau-PET scans from MRI, age and plasma p-tau217. It also contains a pre-trained version of the model that can be directly applied to new test cases, corresponding to the version described and evaluated in the article: https://www.medrxiv.org/content/10.64898/2026.05.06.26352540v1.
 
 **Example of synthetic tau-PET scans generated on left-out test data**
 
