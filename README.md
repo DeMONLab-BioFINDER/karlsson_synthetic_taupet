@@ -40,7 +40,7 @@ karlsson_synthetic_taupet/
 
 Note that this repo contains both 1) code for replicating the work in the research article by training a new model and evaluating it, as well as 2) a pretrained model that can be used to generate synthetic tau-PET from T1w MRI, age and plasma p-tau217 for new subjects.
 
-## Preprocessing
+## Data preprocessing
 
 In the research article, the following preprocessing was performed before training:
 - ***T1w MRI:*** Skull stripping, FreeSurfer v.6.0 segmentation based on the Desikan-Killiany atlas.
@@ -48,6 +48,9 @@ In the research article, the following preprocessing was performed before traini
 - ***All images:*** registered to 2x2x2mm MNI space and saved as NIfTI.
 
 Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is integrated within the training and evaluation functions of this repo, so not needed to do beforehand.
+
+For the blood biomarker plasma p-tau217, it was measured with Eli Lilly immunoassays on a Meso Scale Discovery. Either use this assay or bridge the values  for best performance.
+
 
 ## Dependencies
 All dependencies are specified in the environment.yml file that can be used during set-up.
