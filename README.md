@@ -69,6 +69,8 @@ All dependencies are specified in the environment.yml file that can be used duri
 - matplotlib=3.9.1
 - scikit-image=0.24.0
 
+## Contact
 
+For any questions or inquiries, please contact linda.karlsson@med.lu.se
 
 
