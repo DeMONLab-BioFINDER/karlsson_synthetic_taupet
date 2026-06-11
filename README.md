@@ -51,7 +51,7 @@ In the research article, the following preprocessing was performed before traini
 Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is integrated within the training and evaluation functions of this repo, so not needed to do beforehand.
 
 **Blood biomarker**
-For the blood biomarker plasma p-tau217, it was measured with Eli Lilly immunoassays on a Meso Scale Discovery. Either use this assay or bridge the values  for best performance.
+For the blood biomarker plasma p-tau217, it was measured with Eli Lilly immunoassays on a Meso Scale Discovery platform. Either use this assay or bridge the values  for best performance.
 
 
 ## Dependencies
