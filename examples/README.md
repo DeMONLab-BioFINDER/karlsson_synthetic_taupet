@@ -6,7 +6,7 @@ Create and activate the venv specified in environment.yml.
 ### Train a new U-Net
 To train a new U-Net, use train_new_unet.py and update the paths for training and validation data and images. See example of the expected input formats for csvs and NIfTI images in datasets/simulated_example/.
 
-Training was run on an HPC cluster using Slurm. An example job submission script is provided in start_unet.sh. To submit a job:
+During optimization and development, training was run on an HPC cluster using Slurm. An example job submission script is provided in start_unet.sh. To submit a job:
 ```
 sbatch start_unet.sh
 ```
