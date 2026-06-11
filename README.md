@@ -42,6 +42,7 @@ Note that this repo contains both 1) code for replicating the work in the resear
 
 ## Data preprocessing
 
+**Imaging**
 In the research article, the following preprocessing was performed before training:
 - ***T1w MRI:*** Skull stripping, FreeSurfer v.6.0 segmentation based on the Desikan-Killiany atlas.
 - ***Tau-PET:*** attenuation-correction, motion-correction, summed, and rigid co-registration to MRI, smoothing to FWHM = 7 mm using an isotropic Gaussian kernel.
@@ -49,6 +50,7 @@ In the research article, the following preprocessing was performed before traini
 
 Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is integrated within the training and evaluation functions of this repo, so not needed to do beforehand.
 
+**Blood biomarker**
 For the blood biomarker plasma p-tau217, it was measured with Eli Lilly immunoassays on a Meso Scale Discovery. Either use this assay or bridge the values  for best performance.
 
 
