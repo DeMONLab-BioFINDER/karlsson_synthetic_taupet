@@ -1,9 +1,9 @@
-## U-Net tau-PET synthesis version 1
+# Trained U-Net for tau-PET synthesis (v.1)
 
 This dir contains the trained model in the article https://www.medrxiv.org/content/10.64898/2026.05.06.26352540v1. Training has been performed on 3815 individuals with MRI and age, for which 1708 also had plasma p-tau217 available. Individuals are from 13 different Alzheimer's disease cohorts representing a broad spectrum of clinical diagnoses. More details can be found in the research article.
 The model architecture is specified in unet3d_v1.py and the corresponding weights in weights_v1.hdf5. For optimal performance, preprocess the MRIs according to the specifics in README on the first page/the research article.
 
-### Inference
+## Inference
 **Single new case**
 For a single new case, a synthetic scan can be generated, visualized and saved as a NIfTI image using generate_single_taupet.ipynb.
 
@@ -16,7 +16,7 @@ Missing age and plasma p-tau217 values were imputed to the mean training set val
 **Scalers**
 All values need to be rescaled (z-scored) according to the training set transformation beforehand. The corresponding scalers are provided as scaler_age.joblib and scaler_plasma.joblib.
 
-### Preprocessing
+## Preprocessing
 
 - T1w MRI (required): Skull stripping, registered to 2x2x2mm MNI space and saved as NIfTI.
 - T1w MRI (optional, to evaluate performance): FreeSurfer v.6.0 segmentation based on the Desikan-Killiany atlas.
