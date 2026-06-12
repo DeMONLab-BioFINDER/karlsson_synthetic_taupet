@@ -41,6 +41,9 @@ karlsson_synthetic_taupet/
 
 Note that this repo contains both 1) code for replicating the work in the research article by training a new model and evaluating it, as well as 2) a pretrained model that can be used to generate synthetic tau-PET from T1w MRI, age and plasma p-tau217 for new subjects.
 
+## Inference
+New synthetic tau-PET scans can be generated from MRI, age and plasma p-tau217 using the pretrained model in pretrained_models/unet_taupet_v1/. The directory contains a notebook to generate, visualize and save a synthetic scan for a single new case (generate_single_taupet.ipynb), and a python script to generate and save synthetic scans for a dataset with multiple new cases (generate_multiple_taupet.py). See more details in pretrained_models/unet_taupet_v1/README.md.
+
 ## Data preprocessing
 
 **Imaging**
