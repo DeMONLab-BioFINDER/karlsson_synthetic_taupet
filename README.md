@@ -5,6 +5,8 @@ Author: Linda Karlsson, 2026.
 
 This repo contains code for training, evaluating and visualizing a U-Net 3D model that generates synthetic tau-PET scans from MRI, age and plasma p-tau217. It also contains a pre-trained version of the model that can be directly applied to new test cases, corresponding to the version described and evaluated in the article: https://www.medrxiv.org/content/10.64898/2026.05.06.26352540v1.
 
+**Disclaimer:** This model is intended for research use only. Synthetic tau-PET images may contain errors and should not be used as a substitute for clinically acquired tau-PET or for clinical decision-making.
+
 **Example of synthetic tau-PET scans generated on left-out test data**
 
 https://github.com/user-attachments/assets/1b2dc483-1c58-4974-bdff-2b60bb8e8a18
@@ -25,16 +27,16 @@ karlsson_synthetic_taupet/
 ├── datasets/                    # dir for training, validation and test data
 │   └── simulated_examples/      # simulated dataset for reference and correct formatting
 ├── examples/                    # examples of how to train and evaluate a new model
-├── notebooks                    # notebooks to evaluate results and create plots similar to those in the article
+├── notebooks/                   # notebooks to evaluate results and create plots similar to those in the article
 ├── outputs/                     # dir for outputs during training and evaluation
 │   ├── ckpt/                    # saved checkpoints during training 
 │   ├── eval/                    # saved csv summary files during evaluation
 │   ├── figures/                 # saved figures
 │   ├── logs/                    # saved logs during training
 │   └── synthetic_test_scans/    # saved generated synthetic tau-PET scans during evaluation
-├── pretrained_models            # dir for saved models
+├── pretrained_models/           # dir for saved models
 │   └── unet_taupet_v1/          # fitted synthetic tau-PET model
-└── src                          # source code
+└── src/                         # source code
     ├── models/                  # code for creating and training new models
     └── utils/                   # code for help functions, pre-trained scalers, and composite definitions
 ```
