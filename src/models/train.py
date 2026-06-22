@@ -210,7 +210,7 @@ def train(
             if checkpoint_path is not None:
                 model.save_weights(checkpoint_path + 'epoch{0}.hdf5'.format(epoch))
                 
-        if epoch % 10 == 0:
+        elif epoch % 10 == 0:
             # checkpoint.save(file_prefix = checkpoint_prefix) 
             model.save_weights(checkpoint_path + 'epoch{0}.hdf5'.format(epoch))
 
