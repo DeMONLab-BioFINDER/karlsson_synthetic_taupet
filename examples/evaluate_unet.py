@@ -36,7 +36,7 @@ mask_root    = os.path.join(data_dir, "simulated_example_fs")           # Replac
 regions_csv  = os.path.join(repo_root, "src", "utils", "cho_stages.csv")
 
 # Checkpoints and outputs
-weights_path           = os.path.join(repo_root, "outputs", "ckpt", "[unet_xxxxxx-xxxxx]", "epochx.hdf5")  # Replace "x" with name of weights from U-Net epoch
+weights_path           = os.path.join(repo_root, "outputs", "ckpt", "unet_xxxxxx-xxxxx", "epochx.hdf5")  # Replace "x" with name of weights from U-Net epoch
 eval_output_path       = os.path.join(repo_root, "outputs", "eval", "evaluation_results.csv")              # Select save name
 prediction_output_dir  = os.path.join(repo_root, "outputs", "synthetic_test_scans")
 
@@ -48,6 +48,7 @@ os.makedirs(prediction_output_dir, exist_ok=True)
 # CONFIG
 # --------------------------------------------------
 batch_size = 1
+encoder_filters = (2,2,2,2,512) #To not make net too large! Set to (32,64,128,256,512) in the article
 
 # --------------------------------------------------
 # FUNCTIONS
@@ -160,7 +161,7 @@ test_dataset, taupet_test_paths = build_test_dataset(df_test)
 suvr_regions = pd.read_csv(regions_csv)
 
 # Build model and load weights
-model = build_tau_pet_unet(verbose=True)
+model = build_tau_pet_unet(encoder_filters=encoder_filters,verbose=True)
 model.load_weights(weights_path)
 
 # Convert dataset to list for easier parallel processing
