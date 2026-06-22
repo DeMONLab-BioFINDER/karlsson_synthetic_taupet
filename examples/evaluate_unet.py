@@ -18,25 +18,36 @@ import joblib
 from src.models.unet3d import build_tau_pet_unet
 import src.utils.image_helpers as ih
 
+# --------------------------------------------------
+# PATHS
+# --------------------------------------------------
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root  = os.path.join(script_dir, "..")
+
+# Datasets (relative to repo root)
+data_dir     = os.path.join(repo_root, "datasets", "simulated_example")
+train_csv    = os.path.join(data_dir, "simulated_example_df.csv")       # Replace with path for train csv
+test_csv     = os.path.join(data_dir, "simulated_example_df.csv")       # Replace with path for test csv
+mri_root     = os.path.join(data_dir, "simulated_example_mri")          # Replace with path for MRI data
+taupet_root  = os.path.join(data_dir, "simulated_example_taupet")       # Replace with path for tau-PET data
+mask_root    = os.path.join(data_dir, "simulated_example_fs")           # Replace with path for freesurfer mask data
+
+# Config files
+regions_csv  = os.path.join(repo_root, "src", "utils", "cho_stages.csv")
+
+# Checkpoints and outputs
+weights_path           = os.path.join(repo_root, "outputs", "ckpt", "[unet_xxxxxx-xxxxx]", "epochx.hdf5")  # Replace "x" with name of weights from U-Net epoch
+eval_output_path       = os.path.join(repo_root, "outputs", "eval", "evaluation_results.csv")              # Select save name
+prediction_output_dir  = os.path.join(repo_root, "outputs", "synthetic_test_scans")
+
+# Create output directories
+os.makedirs(os.path.dirname(eval_output_path), exist_ok=True)
+os.makedirs(prediction_output_dir, exist_ok=True)
 
 # --------------------------------------------------
 # CONFIG
 # --------------------------------------------------
-
-# Paths
-train_csv = "datasets/simulated_example/simulated_example_df.csv" #Replace with path for train csv
-test_csv = "datasets/simulated_example/simulated_example_df.csv" #Replace with path for test csv
-
-mri_root = "datasets/simulated_example/simulated_example_mri" #Replace with path for MRI data
-taupet_root = "datasets/simulated_example/simulated_example_taupet" #Replace with path for tau-PET data
-mask_root = "datasets/simulated_example/simulated_example_fs" #Replace with path for MRI freesurfer mask data
-
-regions_csv = "src/utils/cho_stages.csv"
-weights_path = "outputs/ckpt/[unet_xxxxxx-xxxxx/epochx].hdf5" #Replace "x" with name of weights from U-Net epoch
-
-# Output folders
-eval_output_path = "outputs/eval/evaluation_results.csv" #Select save name
-prediction_output_dir = "outputs/synthetic_test_scans/"
+batch_size = 1
 
 # --------------------------------------------------
 # FUNCTIONS
