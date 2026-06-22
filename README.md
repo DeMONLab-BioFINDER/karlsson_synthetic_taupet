@@ -66,6 +66,7 @@ To set-up a virtual environment with the correct dependencies, run:
 conda env create -f environment.yml
 ```
 
+
 All dependencies are specified in the environment.yml file.
 
 - python=3.9.15
@@ -79,6 +80,14 @@ All dependencies are specified in the environment.yml file.
 - seaborn=0.13.2
 - matplotlib=3.9.1
 - scikit-image=0.24.0
+
+### macOS (Apple Silicon M1/M2/M3)
+TensorFlow must be installed separately after the conda environment is set up:
+```
+pip install tensorflow-macos==2.9.0
+pip install tensorflow-metal   # optional, for GPU support
+```
+
 
 ## Contact
 
