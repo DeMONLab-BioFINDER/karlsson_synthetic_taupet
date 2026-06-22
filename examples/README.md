@@ -36,6 +36,6 @@ python examples/evaluate_unet.py
 ```
 
 The output is 
-1) a csv with summary image metrics and suvr in Braak regions comparing true and synthetic images.
-2) synthetic tau-PET for the full test set saved as NIfTI files.
+1) a csv with summary image metrics and suvr in Braak regions comparing true and synthetic images, saved in outputs/eval/.
+2) synthetic tau-PET for the full test set saved as NIfTI files, saved in outputs/synthetic_test_scans/.
 
