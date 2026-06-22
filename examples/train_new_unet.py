@@ -26,27 +26,32 @@ epochs = 200
 weight_sample = False
 encoder_filters = (2,2,2,2,512) #To not make net too large! Set to (32,64,128,256,512) in the article
 
-# Paths
-train_csv = "datasets/simulated_example/simulated_example_df.csv" #Replace with path for train csv
-val_csv = "datasets/simulated_example/simulated_example_df.csv" #Replace with path for val csv
+# --------------------------------------------------
+# PATHS
+# --------------------------------------------------
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root  = os.path.join(script_dir, "..")
 
-mri_root = "datasets/simulated_example/simulated_example_mri" #Replace with path for MRI data
-taupet_root = "datasets/simulated_example/simulated_example_taupet" #Replace with path for tau-PET data
-mask_root = "datasets/simulated_example/simulated_example_fs" #Replace with path for MRI freesurfer mask data
+# Datasets
+data_dir    = os.path.join(repo_root, "datasets", "simulated_example")
+train_csv   = os.path.join(data_dir, "simulated_example_df.csv")   # Replace with path for train csv
+val_csv     = os.path.join(data_dir, "simulated_example_df.csv")   # Replace with path for val csv
+mri_root    = os.path.join(data_dir, "simulated_example_mri")      # Replace with path for MRI data
+taupet_root = os.path.join(data_dir, "simulated_example_taupet")   # Replace with path for tau-PET data
+mask_root   = os.path.join(data_dir, "simulated_example_fs")       # Replace with path for freesurfer mask data
 
 # --------------------------------------------------
 # SAVE NAME
 # --------------------------------------------------
 now = datetime.now().strftime("%y%m%d-%H%M%S")
-script_dir = os.path.dirname(os.path.abspath(__file__))
-output_dir = os.path.join(script_dir, "..", "outputs")
-log_dir = os.path.join(output_dir, "logs", f"unet_{now}")
-ckpt_dir = os.path.join(output_dir, "ckpt", f"unet_{now}")
+log_dir  = os.path.join(repo_root, "outputs", "logs", f"unet_{now}")
+ckpt_dir = os.path.join(repo_root, "outputs", "ckpt", f"unet_{now}")
+
 os.makedirs(log_dir, exist_ok=True)
 os.makedirs(ckpt_dir, exist_ok=True)
 
 summary_writer = tf.summary.create_file_writer(log_dir)
-checkpoint_path = os.path.join(ckpt_dir, "")
+checkpoint_path = ckpt_dir
 
 # --------------------------------------------------
 # RANDOM SEED
