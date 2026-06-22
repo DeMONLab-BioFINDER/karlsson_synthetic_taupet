@@ -86,26 +86,24 @@ pip install -e .
 ```
 
 ## Dependencies
+
+- python=3.9
+- pip=23.3.1
+- tensorflow==2.8.0
+- numpy==1.22.4
+- pandas==1.5.3
+- scikit-learn==1.1.3
+- nibabel==5.1.0
+- tqdm==4.66.5
+- jupyter==1.0.0
+- seaborn==0.12.2
+- matplotlib==3.7.3
+- scikit-image==0.19.3
+
 To set-up a virtual environment with the correct dependencies, run:
 ```
 conda env create -f environment.yml
 ```
-
-All dependencies are specified in the environment.yml file.
-
-- python=3.9
-- pip=23.3.1
-tensorflow==2.8.0
-numpy==1.22.4
-pandas==1.5.3
-scikit-learn==1.1.3
-nibabel==5.1.0
-tqdm==4.66.5
-jupyter==1.0.0
-seaborn==0.12.2
-matplotlib==3.7.3
-scikit-image==0.19.3
-
 
 ## Contact
 
