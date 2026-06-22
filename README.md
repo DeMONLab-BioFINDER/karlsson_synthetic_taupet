@@ -59,11 +59,12 @@ For the blood biomarker plasma p-tau217, it was measured with Eli Lilly immunoas
 
 
 ## Dependencies
-All dependencies are specified in the environment.yml file that can be used during set-up.
-
+To set-up a virtual environment with the correct dependencies, run:
 ```
 conda env create -f environment.yml
 ```
+
+All dependencies are specified in the environment.yml file.
 
 - python=3.9.15
 - tensorflow=2.8.0
