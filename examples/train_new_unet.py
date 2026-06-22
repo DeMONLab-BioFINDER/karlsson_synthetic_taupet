@@ -24,6 +24,7 @@ import src.utils.image_helpers as ih
 batch_size = 4
 epochs = 200
 weight_sample = False
+encoder_filters = (2,2,2,2,512) #To not make net too large! Set to (32,64,128,256,512) in the article
 
 # Paths
 train_csv = "datasets/simulated_example/simulated_example_df.csv" #Replace with path for train csv
@@ -149,7 +150,7 @@ print("Validation dataset successfully created")
 # --------------------------------------------------
 # BUILD MODEL
 # --------------------------------------------------
-model = build_tau_pet_unet(verbose=True)
+model = build_tau_pet_unet(encoder_filters=encoder_filters,verbose=True)
 
 optimizer = tf.keras.optimizers.Adam(
     learning_rate=1e-5,
