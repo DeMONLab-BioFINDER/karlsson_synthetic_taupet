@@ -29,7 +29,11 @@ tensorboard --logdir outputs/logs/[NAME_OF_RUN] --port 8008
 </p>
 
 ### Evaluate a U-Net
-To evaluate a trained U-Net, use evaluate_unet.py and update that paths for training and test data and images. The training data is only used for imputation and scaling of test data. Also specify the weights for the model saved from training.
+To evaluate a trained U-Net, use evaluate_unet.py and update that paths for training and test data and images. The training data is only used for imputation and scaling of test data. Also specify the weights for the model saved from training by replacing all the "x" with the correct name for your trained u-net.
+
+```
+python examples/evaluate_unet.py
+```
 
 The output is 
 1) a csv with summary image metrics and suvr in Braak regions comparing true and synthetic images.
