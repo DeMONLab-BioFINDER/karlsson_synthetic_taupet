@@ -6,12 +6,20 @@ Create and activate the venv specified in environment.yml.
 ### Train a new U-Net
 To train a new U-Net, use train_new_unet.py and update the paths for training and validation data and images. See example of the expected input formats for csvs and NIfTI images in datasets/simulated_example/.
 
+```
+python examples/train_new_unet.py
+```
+
+Note that this U-Net is smaller than the one in the original research article to make it runable on a local computer. Edit the "encoder_filters" in CONFIG to scale it up.
+
+### Run on HPC cluster
 During optimization and development, training was run on an HPC cluster using Slurm. An example job submission script is provided in start_unet.sh. To submit a job:
 ```
 sbatch start_unet.sh
 ```
 Adjust the resource parameters (e.g. --gres=gpu, --time) in the script to match your cluster's configuration.
 
+### Monitor training
 The training process can be monitored using tensorboard.
 ```
 tensorboard --logdir outputs/logs/[NAME_OF_RUN] --port 8008
