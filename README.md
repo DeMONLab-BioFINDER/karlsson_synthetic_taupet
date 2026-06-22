@@ -59,6 +59,31 @@ Note that voxel-wise standardization of MRI (z-scoring) within brain and backgro
 **Blood biomarker**
 For the blood biomarker plasma p-tau217, it was measured with Eli Lilly immunoassays on a Meso Scale Discovery platform.
 
+## Installation
+
+1. Clone the repository and navigate into it:
+```bash
+git clone [<repo-url>](https://github.com/DeMONLab-BioFINDER/karlsson_synthetic_taupet.git)
+cd karlsson_synthetic_taupet
+```
+
+2. Create and activate the conda environment:
+```bash
+conda env create -f environment.yml
+conda activate dl-env
+```
+
+***macOS (Apple Silicon M1/M2/M3)***
+TensorFlow must be installed separately after the conda environment is set up:
+```
+pip install tensorflow-macos==2.9.0
+pip install tensorflow-metal   # optional, for GPU support
+```
+
+3. Install the packages in editable mode:
+```bash
+pip install -e .
+```
 
 ## Dependencies
 To set-up a virtual environment with the correct dependencies, run:
@@ -66,27 +91,20 @@ To set-up a virtual environment with the correct dependencies, run:
 conda env create -f environment.yml
 ```
 
-
 All dependencies are specified in the environment.yml file.
 
-- python=3.9.15
-- tensorflow=2.8.0
-- pandas=2.2.3
-- scikit-learn=1.5.2
-- numpy=1.26.4
-- nibabel=5.3.0
-- tqdm=4.66.5
-- jupyter=1.1.1
-- seaborn=0.13.2
-- matplotlib=3.9.1
-- scikit-image=0.24.0
-
-### macOS (Apple Silicon M1/M2/M3)
-TensorFlow must be installed separately after the conda environment is set up:
-```
-pip install tensorflow-macos==2.9.0
-pip install tensorflow-metal   # optional, for GPU support
-```
+- python=3.9
+- pip=23.3.1
+tensorflow==2.8.0
+numpy==1.22.4
+pandas==1.5.3
+scikit-learn==1.1.3
+nibabel==5.1.0
+tqdm==4.66.5
+jupyter==1.0.0
+seaborn==0.12.2
+matplotlib==3.7.3
+scikit-image==0.19.3
 
 
 ## Contact
