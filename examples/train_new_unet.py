@@ -38,11 +38,15 @@ mask_root = "datasets/simulated_example/simulated_example_fs" #Replace with path
 # SAVE NAME
 # --------------------------------------------------
 now = datetime.now().strftime("%y%m%d-%H%M%S")
-log_dir = "outputs/logs/unet_" + now
-ckpt_dir = "outputs/ckpt/unet_" + now
+script_dir = os.path.dirname(os.path.abspath(__file__))
+output_dir = os.path.join(script_dir, "..", "outputs")
+log_dir = os.path.join(output_dir, "logs", f"unet_{now}")
+ckpt_dir = os.path.join(output_dir, "ckpt", f"unet_{now}")
+os.makedirs(log_dir, exist_ok=True)
+os.makedirs(ckpt_dir, exist_ok=True)
+
 summary_writer = tf.summary.create_file_writer(log_dir)
 checkpoint_path = os.path.join(ckpt_dir, "")
-os.mkdir(checkpoint_path)
 
 # --------------------------------------------------
 # RANDOM SEED
