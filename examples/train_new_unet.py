@@ -51,7 +51,7 @@ os.makedirs(log_dir, exist_ok=True)
 os.makedirs(ckpt_dir, exist_ok=True)
 
 summary_writer = tf.summary.create_file_writer(log_dir)
-checkpoint_path = ckpt_dir
+checkpoint_path = ckpt_dir + '/'
 
 # --------------------------------------------------
 # RANDOM SEED
