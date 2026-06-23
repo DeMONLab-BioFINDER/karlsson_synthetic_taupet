@@ -15,28 +15,35 @@ import joblib
 from pretrained_models.unet_taupet_v1.unet3d_v1 import build_tau_pet_unet
 import src.utils.image_helpers as ih
 
+# --------------------------------------------------
+# PATHS
+# --------------------------------------------------
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root  = os.path.join(script_dir, "..", "..")
 
+data_dir     = os.path.join(repo_root, "datasets", "simulated_example")
+model_dir    = os.path.join(repo_root, "pretrained_models", "unet_taupet_v1")
+
+test_csv     = os.path.join(data_dir, "simulated_example_df.csv")       # Replace with path for test csv
+mri_root     = os.path.join(data_dir, "simulated_example_mri")          # Replace with path for MRI data
+
+# U-Net weights from trained model
+weights_path = os.path.join(model_dir, "weights_v1.hdf5")
+scaler_age_path = os.path.join(model_dir, "scaler_age.joblib")
+scaler_plasma_path = os.path.join(model_dir, "scaler_plasma.joblib")
+
+prediction_output_dir = os.path.join(model_dir, "synthetic_test_scans")
+if not os.path.exists(prediction_output_dir):
+    os.makedirs(prediction_output_dir)
 # --------------------------------------------------
 # CONFIG
 # --------------------------------------------------
-test_csv = "datasets/df_test.csv" #INSERT test dataset dir
-mri_root = " " #INSERT MRI root
-
-# U-Net weights from trained model
-weights_path = "pretrained_models/unet_taupet_v1/weights_v1.hdf5"
-
 fillna_age = 70.08492087077349 # mean age in training set
 fillna_plasma = 0.34589147447495605 # mean plasma p-tau217 in training set
 
 # scalers for z-scoring according to training set
-scaler_age = joblib.load("pretrained_models/unet_taupet_v1/scaler_age.joblib")
-scaler_plasma = joblib.load("pretrained_models/unet_taupet_v1/scaler_plasma.joblib")
-
-prediction_output_dir = "pretrained_models/unet_taupet_v1/synthetic_test_scans"
-
-if not os.path.exists(prediction_output_dir):
-    os.makedirs(prediction_output_dir)
-
+scaler_age = joblib.load(scaler_age_path)
+scaler_plasma = joblib.load(scaler_plasma_path)
 
 # --------------------------------------------------
 # FUNCTIONS
