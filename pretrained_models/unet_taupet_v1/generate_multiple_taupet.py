@@ -19,7 +19,7 @@ import src.utils.image_helpers as ih
 # PATHS
 # --------------------------------------------------
 script_dir = os.path.dirname(os.path.abspath(__file__))
-repo_root  = os.path.join(script_dir, "..", "..")
+repo_root  = os.path.normpath(os.path.join(script_dir,"..", ".."))
 
 data_dir     = os.path.join(repo_root, "datasets", "simulated_example")
 model_dir    = os.path.join(repo_root, "pretrained_models", "unet_taupet_v1")
