@@ -8,13 +8,17 @@ The model architecture is specified in unet3d_v1.py and the corresponding weight
 For a single new case, a synthetic scan can be generated, visualized and saved as a NIfTI image using generate_single_taupet.ipynb.
 
 **Multiple new cases***
-For a test set with multiple cases, synthetic scans can be generated and saved as NIfTI images using generate_multiple_taupet.py.  
+For a test set with multiple cases, synthetic scans can be generated and saved as NIfTI images in synthetic_test_scans/ using generate_multiple_taupet.py.  
+```bash
+python generate_multiple_taupet.py
+```
+Change paths and config in generate_multiple_taupet.py to try out the model on real data. Currently all paths are set to the dummy example of simulated data.
 
 **Missing values**
 Missing age and plasma p-tau217 values were imputed to the mean training set value for model flexiblity without adding new information. These values are provided as fillna_age and fillna_plasma. Note that generating synthetic scans on individuals that are missing these values will likely affect performance.
 
 **Scalers**
-All values need to be rescaled (z-scored) according to the training set transformation beforehand. The corresponding scalers are provided as scaler_age.joblib and scaler_plasma.joblib.
+All values should be rescaled (z-scored) according to the training set transformation beforehand. The corresponding scalers are provided as scaler_age.joblib and scaler_plasma.joblib and run automatically in generate_multiple_taupet.py and generate_single_taupet.ipynb.
 
 ## Preprocessing
 
