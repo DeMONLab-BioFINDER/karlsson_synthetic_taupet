@@ -61,6 +61,10 @@ For the blood biomarker plasma p-tau217, it was measured with Eli Lilly immunoas
 
 ## Installation
 
+This repository uses Git LFS to store the pre-trained model. Make sure to install Git LFS before cloning by running ```
+git lfs install
+```
+
 1. Clone the repository and navigate into it:
 ```bash
 git clone https://github.com/DeMONLab-BioFINDER/karlsson_synthetic_taupet.git
