@@ -67,7 +67,7 @@ git clone https://github.com/DeMONLab-BioFINDER/karlsson_synthetic_taupet.git
 cd karlsson_synthetic_taupet
 ```
 
-2. Create and activate the conda environment:
+2 [Option 1: Conda]. Create and activate the conda environment:
 ```bash
 conda env create -f environment.yml
 conda activate dl-env
@@ -75,9 +75,16 @@ conda activate dl-env
 
 ***ONLY macOS (Apple Silicon M1/M2/M3)***
 TensorFlow must be installed separately after the conda environment is set up:
-```
+```bash
 pip install tensorflow-macos==2.9.0
 pip install tensorflow-metal   # optional, for GPU support
+```
+
+2 [Option 2: with venv]. Create and activate the venv.
+```bash
+python3.9 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 3. Install the packages in editable mode:
