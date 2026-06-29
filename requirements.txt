@@ -8,4 +8,4 @@ jupyter==1.0.0
 seaborn==0.12.2
 matplotlib==3.7.3
 scikit-image==0.19.3
-
+protobuf==3.20.3
