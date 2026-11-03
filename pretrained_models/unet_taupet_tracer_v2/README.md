@@ -1,6 +1,7 @@
 # Trained U-Net for tau-PET synthesis with tracer (v.2)
 
-This dir contains the trained model in the article https://www.medrxiv.org/content/10.64898/2026.05.06.26352540v1 conditioned on tracer. Flortaucipir is encoded as 0 and RO948 as 1. Training has been performed on 3815 individuals with MRI, age and tracer, for which 1708 also had plasma p-tau217 available. Individuals are from 13 different Alzheimer's disease cohorts representing a broad spectrum of clinical diagnoses. More details can be found in the research article.
+This dir contains the trained model in the article https://www.medrxiv.org/content/10.64898/2026.05.06.26352540v1 conditioned on tracer. Flortaucipir is encoded as 0 and RO948 as 1. Training has been performed on 3815 individuals with MRI, age and tracer, for which 1708 also had plasma p-tau217 available. Individuals are from 13 different Alzheimer's disease cohorts representing a broad spectrum of clinical diagnoses. One cohort (BF2, n=1545) used the RO948-tracer, all other Flortaucipir (n=2270). More details can be found in the research article.
+
 The model architecture is specified in unet3d_v2.py and the corresponding weights in weights_tracer_v2.hdf5. For optimal performance, preprocess the MRIs according to the specifics in README on the first page/the research article.
 
 ## Inference
@@ -17,7 +18,7 @@ Change paths and config in generate_multiple_taupet.py to try out the model on r
 **Missing values**
 Missing age and plasma p-tau217 values were imputed to the mean training set value for model flexiblity without adding new information. These values are provided as fillna_age and fillna_plasma. Note that generating synthetic scans on individuals that are missing these values will likely affect performance.
 
-To generate a scan of a specific tracer, just use 0 for flortaucipir and 1 for RO948 in the "tracer" column in your input csv.
+To generate a scan of a specific tracer, just use 0 for flortaucipir and 1 for RO948 in the "tracer" column in your input csv, or use np.nan values in the csv column and set the fillna_tracer variable to 0 or 1 respectively.
 
 **Scalers**
 Plasma p-tau217 and age should be rescaled (z-scored) according to the training set transformation beforehand. The corresponding scalers are provided as scaler_age.joblib and scaler_plasma.joblib and run automatically in generate_multiple_taupet.py and generate_single_taupet.ipynb.
