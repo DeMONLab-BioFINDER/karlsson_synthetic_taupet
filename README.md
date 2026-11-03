@@ -36,7 +36,7 @@ karlsson_synthetic_taupet/
 │   └── synthetic_test_scans/    # saved generated synthetic tau-PET scans during evaluation
 ├── pretrained_models/           # dir for saved models
 │   └── unet_taupet_v1/          # fitted synthetic tau-PET model
-│   └── unet_taupet_tracer_v2/          # fitted tracer-conditioned synthetic tau-PET model
+│   └── unet_taupet_tracer_v2/   # fitted tracer-conditioned synthetic tau-PET model
 └── src/                         # source code
     ├── models/                  # code for creating and training new models
     └── utils/                   # code for help functions, pre-trained scalers, and composite definitions
