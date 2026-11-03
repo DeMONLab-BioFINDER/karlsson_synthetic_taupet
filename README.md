@@ -3,7 +3,7 @@ Author: Linda Karlsson, 2026.
 
 ## Generating synthetic tau-PET scans in Alzheimer’s disease from MRI, blood biomarkers and demographics with deep learning
 
-This repo contains code for training, evaluating and visualizing a U-Net 3D model that generates synthetic tau-PET scans from MRI, age and plasma p-tau217. It also contains a pre-trained version of the model that can be directly applied to new test cases, corresponding to the version described and evaluated in the article: https://www.medrxiv.org/content/10.64898/2026.05.06.26352540v1.
+This repo contains code for training, evaluating and visualizing a U-Net 3D model that generates synthetic tau-PET scans from MRI, age and plasma p-tau217. It also contains two pre-trained version of the model that can be directly applied to new test cases. Version 1 corresponds to the main model described and evaluated in the article: https://www.medrxiv.org/content/10.64898/2026.05.06.26352540v1. Version 2 corresponds to a tracer-conditioned version of the model that can be used to generate synthetic tau-PET that look like either a [18F]Flortaucipir or [18F]RO948 scan.
 
 **Disclaimer:** This model is intended for research use only. Synthetic tau-PET images may contain errors and should not be used as a substitute for clinically acquired tau-PET or for clinical decision-making.
 
@@ -36,15 +36,16 @@ karlsson_synthetic_taupet/
 │   └── synthetic_test_scans/    # saved generated synthetic tau-PET scans during evaluation
 ├── pretrained_models/           # dir for saved models
 │   └── unet_taupet_v1/          # fitted synthetic tau-PET model
+│   └── unet_taupet_tracer_v2/          # fitted tracer-conditioned synthetic tau-PET model
 └── src/                         # source code
     ├── models/                  # code for creating and training new models
     └── utils/                   # code for help functions, pre-trained scalers, and composite definitions
 ```
 
-Note that this repo contains both 1) code for replicating the work in the research article by training a new model and evaluating it, as well as 2) a pretrained model that can be used to generate synthetic tau-PET from T1w MRI, age and plasma p-tau217 for new subjects.
+Note that this repo contains both 1) code for replicating the work in the research article by training a new model and evaluating it, as well as 2) two pretrained models that can be used to generate synthetic tau-PET from T1w MRI, age and plasma p-tau217 for new subjects.
 
 ## Inference
-New synthetic tau-PET scans can be generated from MRI, age and plasma p-tau217 using the pretrained model in pretrained_models/unet_taupet_v1/. The directory contains a notebook to generate, visualize and save a synthetic scan for a single new case (generate_single_taupet.ipynb), and a python script to generate and save synthetic scans for a dataset with multiple new cases (generate_multiple_taupet.py). See more details in pretrained_models/unet_taupet_v1/README.md.
+New synthetic tau-PET scans can be generated from MRI, age and plasma p-tau217 using the pretrained model in pretrained_models/unet_taupet_v1/. To generate tracer-specific scans ([18F]Flortaucipir or [18F]RO948), the pretrained model in pretrained_models/unet_taupet_tracer_v2/ can be used. The two directories contain a notebook to generate, visualize and save a synthetic scan for a single new case (generate_single_taupet.ipynb), and a python script to generate and save synthetic scans for a dataset with multiple new cases (generate_multiple_taupet.py). See more details in pretrained_models/unet_taupet_v1/README.md and pretrained_models/unet_taupet_tracer_v2/README.md.
 
 ## Data preprocessing
 
