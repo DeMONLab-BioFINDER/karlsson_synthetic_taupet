@@ -237,6 +237,49 @@ def load_multiple_modalities_test2(mri_path, plasma_value, age_value, weights=1.
 
     return mri_img, plasma_tensor, age_tensor
 
+def load_multiple_modalities_test3(mri_path, plasma_value, tracer_value, age_value, weights=1.0):
+    """
+    Load and prepare all modalities for one test sample.
+
+    Loads the MRI (with standardization) and brain mask NIfTI files, and converts scalar 
+    clinical variables (plasma p-tau217, age, and sample weight) to TensorFlow tensors. 
+    Unlike the training loader, no tau-PET image is loaded.
+
+    Parameters
+    ----------
+    mri_path : tf.Tensor
+        TensorFlow byte-string tensor with the file path to the MRI NIfTI image.
+    plasma_value : float or tf.Tensor
+        Scaled plasma p-tau217 value for the subject.
+    age_value : float or tf.Tensor
+        Scaled age value for the subject.
+    tracer_value : float or tf.Tensor
+        Tracer value for the subject.
+
+    Returns
+    -------
+    mri_img : tf.Tensor, shape (72, 90, 76, 1), dtype float32
+        Standardized MRI image tensor.
+    plasma_tensor : tf.Tensor, shape (1,), dtype float32
+        Plasma p-tau217 value as a 1-D tensor.
+    age_tensor : tf.Tensor, shape (1,), dtype float32
+        Age value as a 1-D tensor.
+    atracer_tensor : tf.Tensor, shape (1,), dtype float32
+        Tracer value as a 1-D tensor.
+    """
+    mri_img = tf.py_function(func=load_and_preprocess_nifti, inp=[mri_path], Tout=tf.float32)
+    mri_img.set_shape([72, 90, 76, 1])
+
+    plasma_tensor = tf.convert_to_tensor(plasma_value, dtype=tf.float32)
+    plasma_tensor = tf.reshape(plasma_tensor, [-1])
+
+    age_tensor = tf.convert_to_tensor(age_value, dtype=tf.float32)
+    age_tensor = tf.reshape(age_tensor, [-1])
+    
+    tracer_tensor = tf.convert_to_tensor(tracer_value, dtype=tf.float32)
+    tracer_tensor = tf.reshape(tracer_tensor, [-1])
+
+    return mri_img, plasma_tensor, tracer_tensor,age_tensor
 
 def build_file_paths(df, mri_root, taupet_root, mask_root):
     """
