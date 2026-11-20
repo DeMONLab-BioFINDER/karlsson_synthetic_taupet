@@ -21,6 +21,7 @@ The most important first step is a **high-quality brain extraction**. In the ori
 - Recon, attenuation correction, motion correction, averaging.
 - Rigid co-registration of PET to MRI, after the MRI brain extraction.
 - SUVR calculation using the **inferior cerebellum** as reference region.
+- Smoothing to FWHM = 7 mm using an isotropic Gaussian kernel.
 
 ---
 
