@@ -50,6 +50,7 @@ New synthetic tau-PET scans can be generated from MRI, age and plasma p-tau217 u
 ## Data preprocessing
 
 **Imaging**
+
 Details on imaging preprocessing are provided in PREPROCESSING.md. 
 
 In brief, the following preprocessing was performed before training:
