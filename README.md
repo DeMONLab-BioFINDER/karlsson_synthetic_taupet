@@ -50,12 +50,12 @@ New synthetic tau-PET scans can be generated from MRI, age and plasma p-tau217 u
 ## Data preprocessing
 
 **Imaging**
-In the research article, the following preprocessing was performed before training:
+Details on imaging preprocessing are provided in PREPROCESSING.md. 
+
+In brief, the following preprocessing was performed before training:
 - ***T1w MRI:*** Skull stripping, FreeSurfer v.6.0 segmentation based on the Desikan-Killiany atlas.
 - ***Tau-PET:*** attenuation-correction, motion-correction, summed, and rigid co-registration to MRI, smoothing to FWHM = 7 mm using an isotropic Gaussian kernel.
 - ***All images:*** registered to 2x2x2mm MNI space and saved as NIfTI.
-
-Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is integrated within the training and evaluation functions of this repo, so not needed to do beforehand.
 
 **Blood biomarker**
 For the blood biomarker plasma p-tau217, it was measured with Eli Lilly immunoassays on a Meso Scale Discovery platform.
