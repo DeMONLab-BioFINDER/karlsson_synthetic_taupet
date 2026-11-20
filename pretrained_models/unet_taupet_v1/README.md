@@ -22,6 +22,10 @@ All values should be rescaled (z-scored) according to the training set transform
 
 ## Preprocessing
 
-**Imaging** All details on imaging preprocessing are provided in PREPROCESSING.md in main.
+**Imaging** 
+
+All details on imaging preprocessing are provided in PREPROCESSING.md in main.
+
 **Blood biomarkers** 
-- Plasma p-tau217 (optional): measured with Eli Lilly immunoassays on a Meso Scale Discovery platform. Either use this assay or bridge the values for best performance. If plasma p-tau217 is not available, a synthetic scan will be generated without this information.
+
+Plasma p-tau217 (optional): measured with Eli Lilly immunoassays on a Meso Scale Discovery platform. Either use this assay or bridge the values for best performance. If plasma p-tau217 is not available, a synthetic scan will be generated without this information.
