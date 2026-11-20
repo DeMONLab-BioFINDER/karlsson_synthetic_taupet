@@ -25,9 +25,11 @@ Plasma p-tau217 and age should be rescaled (z-scored) according to the training 
 
 ## Preprocessing
 
-- T1w MRI (required): Skull stripping, registered to 2x2x2mm MNI space and saved as NIfTI.
-- T1w MRI (optional, to evaluate performance): FreeSurfer v.6.0 segmentation based on the Desikan-Killiany atlas.
-- Tau-PET (optional, to evaluate performance): attenuation-correction, motion-correction, summed, and rigid co-registration to MRI, smoothing to FWHM = 7 mm using an isotropic Gaussian kernel. Registered to 2x2x2mm MNI space and saved as NIfTI.
-- Plasma p-tau217 (optional): measured with Eli Lilly immunoassays on a Meso Scale Discovery platform. Either use this assay or bridge the values for best performance. If plasma p-tau217 is not available, a synthetic scan will be generated without this information.
+**Imaging** 
 
-Note that voxel-wise standardization of MRI (z-scoring) within brain and background set to 0 is integrated within the training and evaluation functions of this repo, so not needed to do beforehand.
+All details on imaging preprocessing are provided in PREPROCESSING.md in main.
+
+**Blood biomarkers** 
+
+Plasma p-tau217 (optional): measured with Eli Lilly immunoassays on a Meso Scale Discovery platform. Either use this assay or bridge the values for best performance. If plasma p-tau217 is not available, a synthetic scan will be generated without this information.
+
